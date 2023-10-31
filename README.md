@@ -1,71 +1,57 @@
-# Getting Started with Create React App
+# Money Tracker - Full Stack Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Money Tracker is a full-stack web application that helps you manage your finances. It consists of a backend API powered by MongoDB to store financial data in the `/api` directory and a front-end interface in the root folder built using React to visualize and interact with the data. With Money Tracker, you can easily track your income, expenses, and financial transactions.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dashboard**: View an overview of your financial transactions, including your current balance.
 
-### `npm start`
+- **Income and Expenses**: Record your income and expenses with details and categories.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Transaction History**: See a history of all your financial transactions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Edit and Delete**: Easily edit or delete transactions when needed.
 
-### `npm test`
+- **Monthly Summaries**: Get monthly summaries of your financial activities.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Categories**: Categorize your transactions for better organization.
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Front-end**: Built using React, a popular JavaScript library for building user interfaces.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Back-end**: The server is powered by Node.js and Express, providing RESTful API endpoints for the front-end in the `/api` directory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Database**: MongoDB is used to store and manage financial data.
 
-### `npm run eject`
+## Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Front-end
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Money Tracker Front-end](front-end-screenshot.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This screenshot showcases the user-friendly front-end interface, providing an intuitive way to input and view your financial transactions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Server
 
-## Learn More
+![Money Tracker Server](server-screenshot.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The server-side code is built with Node.js and Express, handling API requests and database interactions in the `/api` directory. It serves as the backbone of the application, ensuring data retrieval and storage.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started
 
-### Code Splitting
+To run Money Tracker locally, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Clone the Repository**: Clone this repository to your local machine.
 
-### Analyzing the Bundle Size
+2. **Front-end Setup**: Navigate to the root folder and install the necessary front-end dependencies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. **Back-end Setup**: Navigate to the `/api` directory and install the required server dependencies.
 
-### Making a Progressive Web App
+4. **Database Configuration**: Ensure you have MongoDB installed and running. Update the database connection configuration in the `/api/config/db.js` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. **Start the Server**: Start the server from the `/api` directory.
 
-### Advanced Configuration
+6. **Start the Front-end**: In the root folder, start the React app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# money-tracker
+7. **Access the Application**: Open your web browser and go to [http://localhost:3000](http://localhost:3000) to access the Money Tracker application.
