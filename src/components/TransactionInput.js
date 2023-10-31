@@ -18,7 +18,7 @@ const TransactionInput = ({
             type="text"
             value={name}
             onChange={(ev) => setName(ev.target.value)}
-            placeholder={"+200 new samsung tv"}
+            placeholder={"-15 Dinner"}
           />
           <input
             className="text-slate-500 w-full bg-transparent  border-2 border-gray-800 p-1 rounded-md"
@@ -33,7 +33,7 @@ const TransactionInput = ({
             type="text"
             value={description}
             onChange={(ev) => setDescription(ev.target.value)}
-            placeholder={"description"}
+            placeholder={"escription"}
           />
         </div>
         <button

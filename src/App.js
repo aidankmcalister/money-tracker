@@ -58,24 +58,29 @@ function App() {
   balance = balance.split(".")[0];
 
   return (
-    <main className="max-w-sm mx-auto my-8">
-      <h1 className="text-slate-100 m-0 text-6xl text-center">
-        ${balance}
-        <span className="text-3xl align-top inline-block mt-4">{fraction}</span>
-      </h1>
-      <TransactionInput
-        name={name}
-        datetime={datetime}
-        description={description}
-        setName={setName}
-        setDatetime={setDatetime}
-        setDescription={setDescription}
-        addNewTransaction={addNewTransaction}
-      />
-
-      <TransactionsList transactions={transactions} />
-    </main>
+    <div className="w-full h-full flex justify-center">
+      <main className="max-w-sm mx-4 my-8 h-screen flex flex-col justify-center">
+        <h1 className="text-slate-100 m-0 text-6xl text-center">
+          ${balance}
+          <span className="text-3xl align-top inline-block mt-1">
+            .{fraction}
+          </span>
+        </h1>
+        <TransactionInput
+          name={name}
+          datetime={datetime}
+          description={description}
+          setName={setName}
+          setDatetime={setDatetime}
+          setDescription={setDescription}
+          addNewTransaction={addNewTransaction}
+        />
+        <TransactionsList transactions={transactions} />
+      </main>
+    </div>
   );
 }
 
 export default App;
+
+// background: linear-gradient(to right, white, transparent 90%);
