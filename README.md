@@ -28,13 +28,13 @@ Money Tracker is a full-stack web application that helps you manage your finance
 
 ### Front-end
 
-![Money Tracker Front-end](front-end-screenshot.png)
+![Money Tracker Front-end](./readme-imgs/front-end-screenshot.png)
 
 This screenshot showcases the user-friendly front-end interface, providing an intuitive way to input and view your financial transactions.
 
 ### Server
 
-![Money Tracker Server](server-screenshot.png)
+![Money Tracker Server](./readme-imgs/server-screenshot.png)
 
 The server-side code is built with Node.js and Express, handling API requests and database interactions in the `/api` directory. It serves as the backbone of the application, ensuring data retrieval and storage.
 
