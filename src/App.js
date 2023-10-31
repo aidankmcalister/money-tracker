@@ -1,14 +1,19 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import TransactionsList from "./components/TransactionsList";
+import TransactionInput from "./components/TransactionInput";
 
 function App() {
   const [name, setName] = useState("");
   const [datetime, setDatetime] = useState("");
   const [description, setDescription] = useState("");
   const [transactions, setTransactions] = useState("");
+  const [refreshTransactions, setRefreshTransactions] = useState(false);
 
   useEffect(() => {
-    getTransactions().then(setTransactions);
+    getTransactions().then((fetchedTransactions) => {
+      setTransactions(fetchedTransactions.reverse());
+    });
   }, []);
 
   async function getTransactions() {
@@ -36,10 +41,14 @@ function App() {
         setDatetime("");
         setDescription("");
         console.log("result", json);
+        setRefreshTransactions(!refreshTransactions);
+        console.log("refreshTransactions: ", refreshTransactions);
       });
     });
   }
+
   let balance = 0;
+
   for (const transaction of transactions) {
     balance = balance + transaction.price;
   }
@@ -49,55 +58,22 @@ function App() {
   balance = balance.split(".")[0];
 
   return (
-    <main>
-      <h1>
+    <main className="max-w-sm mx-auto my-8">
+      <h1 className="text-slate-100 m-0 text-6xl text-center">
         ${balance}
-        <span>{fraction}</span>
+        <span className="text-3xl align-top inline-block mt-4">{fraction}</span>
       </h1>
-      <form onSubmit={addNewTransaction}>
-        <div className="basic">
-          <input
-            type="text"
-            value={name}
-            onChange={(ev) => setName(ev.target.value)}
-            placeholder={"+200 new samsung tv"}
-          />
-          <input
-            type="datetime-local"
-            value={datetime}
-            onChange={(ev) => setDatetime(ev.target.value)}
-          />
-        </div>
-        <div className="description">
-          <input
-            type="text"
-            value={description}
-            onChange={(ev) => setDescription(ev.target.value)}
-            placeholder={"description"}
-          />
-        </div>
-        <button type="submit">Add new transaction</button>
-      </form>
-      <div className="transactions">
-        {transactions.length > 0 &&
-          transactions.map((transaction) => (
-            <div className="transaction">
-              <div className="left">
-                <div className="name">{transaction.name}</div>
-                <div className="description">{transaction.description}</div>
-              </div>
-              <div className="right">
-                <div
-                  className={
-                    "price " + (transaction.price < 0 ? "red" : "green")
-                  }>
-                  {transaction.price}
-                </div>
-                <div className="datetime">{transaction.datetime}</div>
-              </div>
-            </div>
-          ))}
-      </div>
+      <TransactionInput
+        name={name}
+        datetime={datetime}
+        description={description}
+        setName={setName}
+        setDatetime={setDatetime}
+        setDescription={setDescription}
+        addNewTransaction={addNewTransaction}
+      />
+
+      <TransactionsList transactions={transactions} />
     </main>
   );
 }
